@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>html + js</h1>
+    <div id="text"></div>
+    <button onclick="Greeting()">Click to see Greeting.</button>
+    <script>
+        function Greeting() {
+            alert("Hello Aneesh");
+            console.log(document.getElementById("text"), "Accessing id");
+            document.getElementById("text").innerHTML = "Hello World!";
+        }
+    </script>
+</body>
+
+</html>
