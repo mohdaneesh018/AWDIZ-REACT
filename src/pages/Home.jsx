@@ -4,8 +4,7 @@ import Navbar from "../component/Navbar";
 function Home() {
     return (
         <>
-             
-            <h1>Home Rajasthan</h1>
+            <h1>Home, Aneesh</h1>
         </>
     );
 }

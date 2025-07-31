@@ -5,25 +5,22 @@ import Navbar from './component/Navbar';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import { Route, Routes } from 'react-router-dom';
-
+import UseState from './pages/30-07/UseState'; 
+import UseEffect from './pages/30-07/UseEffect';
 
 function App() {
   console.log("Mumbai");
   <Navbar />
   return (
     <>
-    <Navbar />
-      {/* <Navbar />
-      <Home />
-      <Profile />
-      <h1>Full Stack Developer</h1>
-      <h1>Mern Stack</h1> */}
-
+    <Navbar /> 
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/profile' element={<Profile />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
+        <Route path='/use-state' element={<UseState />} />
+        <Route path='/use-effect' element={<UseEffect />} />
       </Routes>
     </>
   );
