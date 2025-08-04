@@ -16,14 +16,13 @@ const CreateFruits = () => {
         } else {
             alert("Please enter a fruit name");
         }
-
-        const handleDelete = (index) => {
-            // console.log("Delete clicked for index:", index);
-            const updatedFruits = fruits.filter((_, i) => i !== index);
-            // console.log("Updated Fruits:", updatedFruits);
-            setFruits(updatedFruits);
-        };
     }
+    const handleDelete = (index) => {
+        // console.log("Delete clicked for index:", index);
+        const updatedFruits = fruits.filter((_, i) => i !== index);
+        // console.log("Updated Fruits:", updatedFruits);
+        setFruits(updatedFruits);
+    };
 
     return (
         <div>
