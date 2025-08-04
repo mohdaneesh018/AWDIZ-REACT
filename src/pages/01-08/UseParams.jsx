@@ -11,11 +11,15 @@ const UseParams = () => {
         { id: 4, name: "T-shirt 4", price: 400, image: "https://assets.ajio.com/medias/sys_master/root/20240813/9ths/66bac18f1d763220fa744b48/-473Wx593H-700263214-black-MODEL.jpg" },
         { id: 5, name: "T-shirt 5", price: 500, image: "https://assets.ajio.com/medias/sys_master/root/20240813/9ths/66bac18f1d763220fa744b48/-473Wx593H-700263214-black-MODEL.jpg" }
     ]);
+
+    // const parentStyling = { display: "flex", justifyContent: "space-around", }
+    console.log(tshirt, "tshirts");
     return (
-        <div style={{ display: "flex", justifyContent: "space-around", }}>
+        // <div style={parentStyling}>    // ye ek method h jo upr likhte phr idr pass krte h 
+        <div style = {{ display: "flex", justifyContent: "space-around", }}>
             {tshirt.map((product) => (
                 <div
-                    key = {product.id}
+                    key={product.id}
                     onClick={() => router(`/product/${product.id}`)}
                     style={{ border: "1px solid black", cursor: "pointer" }}
                 >
