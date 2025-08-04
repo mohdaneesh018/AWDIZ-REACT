@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 const CreateFruits = () => {
+    const [editIndex, setEditIndex] = useState(null);
     const [fruits, setFruits] = useState(["Apple", "Banana", "Cherry"]);
     const [newFruits, setNewFruits] = useState("");
 
@@ -9,7 +10,6 @@ const CreateFruits = () => {
     };
 
     const handleSubmit = () => {
-        // if (newFruits.length > 0) {
         if (newFruits.trim() !== "") {
             setFruits([...fruits, newFruits]);
             setNewFruits("");
@@ -17,12 +17,28 @@ const CreateFruits = () => {
             alert("Please enter a fruit name");
         }
     }
+
     const handleDelete = (index) => {
-        // console.log("Delete clicked for index:", index);
         const updatedFruits = fruits.filter((_, i) => i !== index);
-        // console.log("Updated Fruits:", updatedFruits);
         setFruits(updatedFruits);
     };
+
+    const handleEdit = (index) => {
+        setEditIndex(index);
+        setNewFruits(fruits[index]);
+    }
+
+    const handleUpdate = () => {
+        if (editIndex !== null && newFruits.trim() !== "") {
+            const updatedFruits = [...fruits];
+            updatedFruits[editIndex] = newFruits;
+            setFruits(updatedFruits);
+            setNewFruits("");
+            setEditIndex(null);
+        } else {
+            alert("Please select a fruit to edit and enter a new name");
+        }
+    }
 
     return (
         <div>
@@ -34,11 +50,22 @@ const CreateFruits = () => {
                     </h1>
                     {/* <button onClick={() => handleDelete(index)}>Delete</button> */}
                     <button onClick={() => handleDelete(index)}>Delete</button>
+                    <button onClick={() => handleEdit(index)} >Edit</button>
                 </div>
             ))}
             <input value={newFruits} onChange={handleInputChange} />
             <br />
-            <button onClick={handleSubmit}>Add {newFruits}</button>
+            {editIndex !== null ? (
+                <button onClick={handleUpdate}>Update</button>
+            ) : (<button onClick={handleSubmit}>Add {newFruits}</button>)
+            }
+            {editIndex !== null && (
+                <button onClick={() => { setEditIndex(null); setNewFruits(" "); }}>Cancel Edit</button>
+            )
+            }
+
+
+
         </div>
     )
 }
