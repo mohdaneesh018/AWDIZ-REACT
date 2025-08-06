@@ -33,6 +33,23 @@ const Register = () => {
         password: "",
         confirmPassword: ""
     });
+
+    const [handlePassword, setHandlePassword] = useState(false);
+    const ShowPassword = () => {
+        setHandlePassword(!handlePassword);
+
+        // setTimeout( () => {
+        //     setHandlePassword(false);
+        // }, 5000);
+    }
+
+    //     const [error, setError] = useState({});
+    //   const [passhandle, setPasshandle] = useState({
+    //     password: false,
+    //     cpassword: false,
+    //   });
+
+
     const handleChange = (event) => {
         console.log(event.target.name, event.target.value);
         setUserData({
@@ -67,31 +84,60 @@ const Register = () => {
         }
     }
 
-        return (
-            <div>
-                <h1>Sign Up</h1>
-                <h2>Name : {userData.name} Email : {userData.email} password : {userData.password} confirmPassword : {userData.confirmPassword}</h2>
-                <form onSubmit={handleSubmit}>
-                    <label>Name</label>
-                    <br />
-                    <input type="text" name="name" value={userData.name} onChange={handleChange} />
-                    <br />
-                    <label>Email</label>
-                    <br />
-                    <input type="email" name="email" value={userData.email} onChange={handleChange} />
-                    <br />
-                    <label>Password</label>
-                    <br />
-                    <input type="password" name="password" value={userData.password} onChange={handleChange} />
-                    <br />
-                    <label>Confirm Password</label>
-                    <br />
-                    <input type="password" name="confirmPassword" value={userData.confirmPassword} onChange={handleChange} />
-                    <br />
-                    <input type="submit" />
-                </form>
-            </div>
-        )
-    }
+    return (
+        <div>
+            <h1>Sign Up</h1>
+            <h2>Name : {userData.name} Email : {userData.email} password : {userData.password} confirmPassword : {userData.confirmPassword}</h2>
+            <form onSubmit={handleSubmit}>
+                <label>Name</label>
+                <br />
+                <input type="text" name="name" value={userData.name} onChange={handleChange} />
+                <br />
+                <label>Email</label>
+                <br />
+                <input type="email" name="email" value={userData.email} onChange={handleChange} />
+                <br />
+                <label>Password</label>
+                <br />
+                <input type={
+                    handlePassword ? "text" : "password"
+                } name="password" value={userData.password} onChange={handleChange} />
+                <button
+                    type='button'
+                    onClick={ShowPassword}
+                >Show</button>
 
-    export default Register;
+                {/* onClick={() =>
+                setPasshandle((prev) => ({
+                  ...prev,
+                  password: !prev.password,
+                }))
+              }
+            >
+              {passhandle.password ? "Hide" : "Show"}
+             */}
+                <br />
+                <label>Confirm Password</label>
+                <br />
+                <input type={
+                    handlePassword ? "text" : "password"
+                } name="confirmPassword" value={userData.confirmPassword} onChange={handleChange} />
+                <button onClick={ShowPassword} type='button'>Show</button>
+
+                {/* onClick={() =>
+                setPasshandle((prev) => ({
+                  ...prev,
+                  cpassword: !prev.cpassword,
+                }))
+              }
+            >
+              {passhandle.cpassword ? "Hide" : "Show"} */}
+
+                <br />
+                <input type="submit" />
+            </form>
+        </div>
+    )
+}
+
+export default Register;
