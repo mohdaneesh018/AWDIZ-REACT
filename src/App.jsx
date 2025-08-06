@@ -12,6 +12,7 @@ import Product from './pages/01-08/Product';
 import StyledComponents from './pages/02-08/StyledComponents';
 import CreateFruits from './pages/02-08/CreateFruits';
 import Greeting from './pages/02-08/Greeting';
+import DynamicStyles from './pages/03-08/DynamicStyles';
 
 function App() {
   const [users, setUsers] = useState(["Virat", "Rohit", "Dhoni"])
@@ -37,6 +38,7 @@ function App() {
           path='/greeting' 
           element={<Greeting name="Aneesh" isLoggedIn={false} />} 
         />
+        <Route path='/dynamic-styles' element={<DynamicStyles />} />
       </Routes>
     </>
 

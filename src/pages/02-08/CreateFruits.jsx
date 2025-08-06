@@ -54,6 +54,10 @@ const CreateFruits = () => {
                 </div>
             ))}
             <input value={newFruits} onChange={handleInputChange} />
+            {/* <input type="radio" value="honda" />
+            <select>
+                <option value="honda">honda</option>
+            </select> */}
             <br />
             {editIndex !== null ? (
                 <button onClick={handleUpdate}>Update</button>
@@ -63,9 +67,6 @@ const CreateFruits = () => {
                 <button onClick={() => { setEditIndex(null); setNewFruits(" "); }}>Cancel Edit</button>
             )
             }
-
-
-
         </div>
     )
 }

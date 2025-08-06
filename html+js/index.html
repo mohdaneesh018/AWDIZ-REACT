@@ -10,12 +10,17 @@
 <body>
     <h1>html + js</h1>
     <div id="text"></div>
-    <button onclick="Greeting()">Click to see Greeting.</button>
+    <!-- <button onclick="Greeting()">Click to see Greeting.</button> -->
     <script>
-        function Greeting() {
-            alert("Hello Aneesh");
-            console.log(document.getElementById("text"), "Accessing id");
-            document.getElementById("text").innerHTML = "Hello World!";
+        // function Greeting() {
+            // alert("Hello Aneesh");
+            // console.log(document.getElementById("text"), "Accessing id");
+            // document.getElementById("text").innerHTML = "Hello World!";
+        // }
+
+        const myObject = {name : "", email : "", password : "", confirmPassword : ""};
+        if(myObject["name"]){
+            myObject["name"] = "Aneesh";
         }
     </script>
 </body>
