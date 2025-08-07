@@ -13,12 +13,14 @@ import StyledComponents from './pages/02-08/StyledComponents';
 import CreateFruits from './pages/02-08/CreateFruits';
 import Greeting from './pages/02-08/Greeting';
 import DynamicStyles from './pages/03-08/DynamicStyles';
+import PageNotFound from './pages/06-08/pageNotFound';
+import FetchData from './pages/06-08/FetchData';
 
 function App() {
   const [users, setUsers] = useState(["Virat", "Rohit", "Dhoni"])
   // <Navbar />
   return (
-    <>
+    <div style={{ textAlign: "center", marginTop: "100px" }}>
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
@@ -34,13 +36,15 @@ function App() {
         />
         <Route path='/styled-components' element={<StyledComponents />} />
         <Route path='/create-fruits' element={<CreateFruits />} />
-        <Route 
-          path='/greeting' 
-          element={<Greeting name="Aneesh" isLoggedIn={false} />} 
+        <Route
+          path='/greeting'
+          element={<Greeting name="Aneesh" isLoggedIn={false} />}
         />
         <Route path='/dynamic-styles' element={<DynamicStyles />} />
+        <Route path='/*' element={<PageNotFound />} />
+        <Route path='/fetchdata' element={<FetchData />} />
       </Routes>
-    </>
+    </div>
 
   );
 }
