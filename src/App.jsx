@@ -15,6 +15,11 @@ import Greeting from './pages/02-08/Greeting';
 import DynamicStyles from './pages/03-08/DynamicStyles';
 import PageNotFound from './pages/06-08/pageNotFound';
 import FetchData from './pages/06-08/FetchData';
+import Mycart from './pages/08-08/MyCart'; 
+import ProductInfo from './pages/08-08/ProductInfo';
+import ProductDetail from './pages/08-08/Productdetail';
+import UseMemo from './pages/10-08/UseMemo';
+import UseCallback from './pages/10-08/UseCallback';
 
 function App() {
   const [users, setUsers] = useState(["Virat", "Rohit", "Dhoni"])
@@ -43,6 +48,11 @@ function App() {
         <Route path='/dynamic-styles' element={<DynamicStyles />} />
         <Route path='/*' element={<PageNotFound />} />
         <Route path='/fetchdata' element={<FetchData />} />
+        <Route path='/mycart' element={<Mycart />} />
+        <Route path='/productinfo/:productId' element={<ProductInfo />} />
+        <Route path='/productdetail' element={<ProductDetail />} />
+        <Route path='/use-memo' element={<UseMemo />} />
+        <Route path='/use-callback' element={<UseCallback />} />
       </Routes>
     </div>
 
