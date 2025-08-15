@@ -20,6 +20,7 @@ import ProductInfo from './pages/08-08/ProductInfo';
 import ProductDetail from './pages/08-08/Productdetail';
 import UseMemo from './pages/10-08/UseMemo';
 import UseCallback from './pages/10-08/UseCallback';
+import UseRef from './pages/13-08/UseRef';
 
 function App() {
   const [users, setUsers] = useState(["Virat", "Rohit", "Dhoni"])
@@ -53,6 +54,7 @@ function App() {
         <Route path='/productdetail' element={<ProductDetail />} />
         <Route path='/use-memo' element={<UseMemo />} />
         <Route path='/use-callback' element={<UseCallback />} />
+        <Route path='/use-ref' element={<UseRef />} />
       </Routes>
     </div>
 

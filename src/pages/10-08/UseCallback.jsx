@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import ChildrenComponent from './ChildrenComponent'
 
 const UseCallback = () => {
     const [counter, setCounter] = React.useState(0);
     const [counter2, setCounter2] = React.useState(2);
+
+    // const Increament = () => {
+    //     setCounter(counter + 1);
+    // }
+
+    const Increament = useCallback(() => {
+        setCounter(counter + 1);
+    }, [counter]);
+
     return (
         <div>
             <h1>Parent Text : {counter}</h1>
