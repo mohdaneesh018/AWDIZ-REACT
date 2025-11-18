@@ -1,0 +1,10 @@
+Step 1 : Install redux-toolkit and react-redux package -->
+npm i react-redux
+npm i @reduxjs/toolkit
+
+Step 2 : Create Folder Structure -->
+src
+index.js
+store.js
+counterSlice.js
+CounterComponent.jsx
